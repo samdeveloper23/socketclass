@@ -69,6 +69,7 @@ io.on('connection', (socket) => {  /*llamamos a socket para obtener las ropiedad
         message.push(data);
         //emitimos a todos los clientes el Array de mensajes actualizado.
         io.emit('messages', message);
+        //si deseamos ver el ultimo mensaje enviado podemos declarar una variable y usando 'length' podemos hacer 'log' del yultimo mensaje emitido. 
         const lastMessage = message[message.length - 1];
         console.log('Último mensaje:', lastMessage);
     });
