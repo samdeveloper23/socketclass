@@ -32,17 +32,19 @@ app.use(express.static('client'));
 
 //################### TERCERA PARTE ########################                            3
 
-//utilizamos la variable de app previamente cargada con expres para la creación de rutas.
-app.get('/hi-hack-a-boss', (req, res) => {
+app.use(express.static('client'));
 
-    //cuando nos hagan una peticion get les devolvemos (res = respuesta) un mensaje.
-    res.status(200).send('Hola a todos los participantes de este lindo taller impartido gracias a HACK A BOSS');
-    //otra manera de respuesta seria:
-    /*res.send({
-        status: 200,
-        message: Hola a todos los participantes de este taller impartido gracias a HACK A BOSS,
-    })*/
-})
+//utilizamos la variable de app previamente cargada con expres para la creación de rutas.
+//app.get('/', (req, res) => {
+
+//cuando nos hagan una peticion get les devolvemos (res = respuesta) un mensaje.
+//  res.status(200).send();
+//otra manera de respuesta seria:
+/*res.send({
+    status: 200,
+    message: Hola a todos los participantes de este taller impartido gracias a HACK A BOSS,
+})*/
+//})
 
 //#################### SEXTA PARTE ################################                     6
 
@@ -79,7 +81,7 @@ io.on('connection', (socket) => {  /*llamamos a socket para obtener las ropiedad
 //##################### SEGUNDA PARTE ######################                            2
 
 //ponemos a la escucha el servidor.
-server.listen(6677, () => {
+server.listen(8000, () => {
     console.log('Servidor en correrto funcionamiento');
 })
 //socket ya esta en correcto funcionamiento en el eveno de escucha dado que la carguemos en io.
